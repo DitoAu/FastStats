@@ -12,7 +12,7 @@ package ca.esdot.stats
 	import flash.text.TextFormat;
 	import flash.utils.getTimer;
 
-	public class FastStats extends Object {
+	public class FastStats extends Sprite {
 		
 		protected var _stage:Object;
 		protected var _root:Object;
@@ -46,7 +46,8 @@ package ca.esdot.stats
 		
 		public function FastStats(root:DisplayObjectContainer, showBg:Boolean = true) {
 			this.showBg = showBg;
-			_root = root; 
+			_root = root;
+			this.mouseChildren = false;
 			init();
 		}
 		
@@ -62,7 +63,7 @@ package ca.esdot.stats
 		
 		public static function get fps():int{ return _fps; }
 		
-		public function set visible(value:Boolean):void {
+		public function set _visible(value:Boolean):void {
 			bg.visible = value;
 			statsCache.visible = value;
 		}
